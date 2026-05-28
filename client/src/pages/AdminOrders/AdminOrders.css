@@ -1,0 +1,164 @@
+.admin-orders-container {
+
+  padding: 40px;
+
+  max-width: 1300px;
+
+  margin: auto;
+}
+
+.admin-orders-container h1 {
+
+  margin-bottom: 30px;
+}
+
+.orders-table {
+
+  background: white;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 14px rgba(0,0,0,0.08);
+}
+
+.orders-header,
+.orders-row {
+
+  display: grid;
+
+  grid-template-columns:
+  80px
+  1fr
+  1.5fr
+  120px
+  140px
+  140px
+  140px;
+
+  gap: 20px;
+
+  padding: 20px;
+
+  align-items: center;
+}
+
+.orders-header {
+
+  background: #111827;
+
+  color: white;
+
+  font-weight: bold;
+}
+
+.orders-row {
+
+  border-bottom:
+    1px solid #eee;
+}
+
+.orders-row:hover {
+
+  background: #f9fafb;
+}
+
+.status-paid {
+
+  background: #16a34a;
+
+  color: white;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+  text-transform: capitalize;
+}
+
+.status-pending {
+
+  background: #f59e0b;
+
+  color: white;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+  text-transform: capitalize;
+}
+
+.status-refunded {
+
+  background: crimson;
+
+  color: white;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+  text-transform: capitalize;
+}
+
+.status-cancelled {
+
+  background: gray;
+
+  color: white;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+  text-transform: capitalize;
+}
+.refund-btn {
+
+  background: crimson;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.2s;
+}
+
+.refund-btn:hover {
+
+  opacity: 0.85;
+}
+
+.refund-btn:disabled {
+
+  background: gray;
+
+  cursor: not-allowed;
+}
