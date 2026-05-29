@@ -12,13 +12,13 @@ async function startServer() {
     await sequelize.authenticate();
     console.log("✅ Database connected");
 
-
+/*
     await sequelize.sync({ logging: console.log });
     console.log("✅ Models synchronized");
-/*
+*/
     await sequelize.sync();
     console.log("✅ Models synchronized");
-*/
+
     app.listen(PORT, () => {
       console.log(`🚀 Server running on port ${PORT}`);
     });
