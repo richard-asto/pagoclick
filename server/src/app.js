@@ -13,11 +13,20 @@ const app = express();
 console.log("CLIENT_URL:", process.env.CLIENT_URL);
 app.set("trust proxy", 1);
 app.use(helmet());
+
+app.use(cors({
+  origin: process.env.CLIENT_URL || "https://pagoclick-client.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+}));
+
+/*
 app.use(cors({
   origin: process.env.CLIENT_URL,
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
+*/
 app.use(express.json());
 
 const authLimiter = rateLimit({
