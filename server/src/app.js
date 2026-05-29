@@ -20,6 +20,19 @@ app.use(cors({
   credentials: true,
 }));
 
+app.get("/setup-admin", async (req, res) => {
+  try {
+    const User = require("./models/User");
+    await User.update(
+      { role: "admin" },
+      { where: { email: "richard@test.com" } }
+    );
+    res.json({ message: "Admin set" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
 app.use(express.json());
 
