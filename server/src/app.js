@@ -10,6 +10,7 @@ const paymentRoutes = require("./routes/payment.routes");
 const refundRoutes = require("./routes/refund.routes");
 
 const app = express();
+console.log("CLIENT_URL:", process.env.CLIENT_URL);
 app.set("trust proxy", 1);
 app.use(helmet());
 app.use(cors({
