@@ -20,13 +20,14 @@ app.use(cors({
   credentials: true,
 }));
 
-/*
-app.use(cors({
-  origin: process.env.CLIENT_URL,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-}));
-*/
+app.get("/setup-admin", async (req, res) => {
+  const { User } = require("./models");
+  await User.update(
+    { role: "admin" },
+    { where: { email: "richard@test.com" } }
+  );
+  res.json({ message: "Admin set" });
+});
 app.use(express.json());
 
 const authLimiter = rateLimit({
